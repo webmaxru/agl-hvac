@@ -1,9 +1,9 @@
 var urlws
 var urlhttp
 
-export function AFB (base, initialtoken) {
-  urlws = 'ws://' + window.location.host + '/' + base
-  urlhttp = 'http://' + window.location.host + '/' + base
+export function AFB (host, base, initialtoken) {
+  urlws = 'ws://' + host + '/' + base
+  urlhttp = 'http://' + host + '/' + base
 
   /*********************************************/
   /****                                     ****/
