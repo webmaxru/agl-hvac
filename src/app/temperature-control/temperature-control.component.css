@@ -1,0 +1,11 @@
+.temperature-value {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px 0;
+    height: 64px;
+}
+
+.temperature-control {
+    width: 95px
+}

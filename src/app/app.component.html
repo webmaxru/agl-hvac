@@ -1,5 +1,25 @@
-<button (click)="connect()">Connect</button>
-<button (click)="checkband()">Check</button>
+<div class="app">
+
+  <div class="temperature-control">
+
+    <app-temperature-control zoneId="1"></app-temperature-control>
+
+    <app-temperature-control zoneId="2"></app-temperature-control>
+
+  </div>
+
+  <div (click)="modalOpened=true" class="test-button">!</div>
+
+</div>
+
+
+
+<clr-modal [(clrModalOpen)]="modalOpened" [clrModalStaticBackdrop]="true">
+  <h3 class="modal-title">Access denied</h3>
+  <div class="modal-body">
+    <p>You don't have a permission to run this action</p>
+  </div>
+</clr-modal>
 
 
 <router-outlet></router-outlet>

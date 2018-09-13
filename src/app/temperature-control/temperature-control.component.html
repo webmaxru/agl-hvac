@@ -1,0 +1,24 @@
+<div class="temperature-control">
+  <button (click)="temperatureUp()" class="btn btn-success btn-block" [disabled]="temperature >= maxTemp">
+    <clr-icon shape="arrow" dir="up"></clr-icon>
+  </button>
+
+  <div class="temperature-value">
+
+    {{displayTemp}}
+
+  </div>
+
+  <button (click)="temperatureDown()" class="btn btn-success btn-block" [disabled]="temperature <= minTemp">
+    <clr-icon shape="arrow" dir="down"></clr-icon>
+  </button>
+
+
+  <clr-modal [(clrModalOpen)]="modalOpened" [clrModalStaticBackdrop]="true">
+    <h3 class="modal-title">Access denied</h3>
+    <div class="modal-body">
+      <p>You don't have a permission to change a temperature of this zone</p>
+    </div>
+  </clr-modal>
+
+</div>
