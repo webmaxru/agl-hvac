@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as AFB from './afb-websocket.service.js';
+import AFB from './afb-websocket.service.js';
 
 @Component({
   selector: 'app-root',
@@ -28,22 +28,16 @@ export class AppComponent {
   }
 
   connect() {
-    this.afb = new AFB.AFB('localhost:1111', 'api', 'mysecret');
+    this.afb = new AFB('46560ff6.ngrok.io', 'api', 'mysecret');
     this.ws = new this.afb.ws(
       () => {
         this.callbinder('hvac_mockup', 'auth', '');
 
         this.ws.onevent('*', this.gotevent);
-        this.callbinder('hvac_mockup', 'get-temperature', {
-          value: 'frequency'
-        });
-        this.callbinder('hvac_mockup', 'get-temperature', {
-          value: 'station_found'
-        });
+        this.callbinder('hvac_mockup', 'get-temperature', '');
       },
       () => {
-        this.callbinder('radio', 'unsubscribe', { value: 'frequency' });
-        this.callbinder('radio', 'unsubscribe', { value: 'station_found' });
+        // Unsubscribe?
       }
     );
   }

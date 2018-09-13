@@ -1,7 +1,7 @@
 var urlws
 var urlhttp
 
-export function AFB (host, base, initialtoken) {
+export default function AFB (host, base, initialtoken) {
   urlws = 'ws://' + host + '/' + base
   urlhttp = 'http://' + host + '/' + base
 
